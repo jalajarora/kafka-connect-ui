@@ -1,0 +1,78 @@
+<span style="font-weight: bold; font-size: 17px;"> Connector :</span> <span style="font-family: 'Comic Sans MS'; background-color: lightsteelblue;"> {{finalConnectorName}} </span>
+
+<table style="width:100%; padding-top: 30px;">
+  <tr>
+    <td>
+
+      <div align="center" style="width: 90%; vertical-align: center; margin: auto; background-color: #FAFAFA; font-family: 'Helvetica Neue';">
+        <table style="table-layout: fixed;" mat-table [dataSource]="dataSource" class="mat-elevation-z">
+
+          <!--- Note that these columns can be defined in any order.
+                The actual rendered columns are set as a property on the row definition" -->
+
+          <!-- Position Column -->
+          <ng-container matColumnDef="id">
+            <th style="width: 20%;" mat-header-cell *matHeaderCellDef> id </th>
+            <td style="height: 70px;" mat-cell *matCellDef="let element"> {{element.id}}
+            </td>
+          </ng-container>
+
+          <ng-container matColumnDef="state">
+            <th style="width: 30%;" mat-header-cell *matHeaderCellDef> State </th>
+            <td mat-cell *matCellDef="let element">
+              <flux-chip *ngIf= 'element.state == "PAUSED"' swatch-color="#FFB242">{{element.state}} </flux-chip>
+              <flux-chip *ngIf= 'element.state == "RUNNING"' swatch-color="#63D46F">{{element.state}} </flux-chip>
+              <flux-chip *ngIf= 'element.state == "FAILED"' swatch-color="#F50B0B">{{element.state}} </flux-chip>
+              <flux-chip *ngIf= 'element.state == "UNASSIGNED"' swatch-color="#0B59F5">{{element.state}} </flux-chip>
+            </td>
+          </ng-container>
+
+          <ng-container matColumnDef="workerid">
+            <th style="width: 30%;" mat-header-cell *matHeaderCellDef> workerID </th>
+            <td style="height: 70px;" mat-cell *matCellDef="let element"> {{element.worker_id}}
+            </td>
+          </ng-container>
+
+          <ng-container matColumnDef="menu">
+            <th style="width: 10%;" mat-header-cell *matHeaderCellDef> </th>
+            <td mat-cell *matCellDef="let element">
+              <button style="padding-left: 60px;" mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu">
+                <mat-icon>more_vert</mat-icon>
+              </button>
+              <mat-menu #menu="matMenu" xPosition="before" yPosition="below">
+
+<!--                <button mat-menu-item>-->
+<!--                  <mat-icon>settings</mat-icon>-->
+<!--                  <span>View Connector Config</span>-->
+<!--                </button>-->
+
+                <button mat-menu-item (click)="restartTask(finalConnectorName,element.id)">
+                  <mat-icon>restart_alt</mat-icon>
+                  <span>Restart Task</span>
+                </button>
+
+              </mat-menu>
+            </td>
+          </ng-container>
+
+          <!-- Name Column -->
+<!--          <ng-container matColumnDef="tasks">-->
+<!--            <th style="padding-left: 90px;" mat-header-cell *matHeaderCellDef> Task </th>-->
+<!--            <td style="padding-left: 90px;" mat-cell *matCellDef="let element">-->
+<!--              <button mat-raised-button color="primary" *ngFor="let item of element.tasks | myPipe; let l = count" (click)="openTasks()"-->
+<!--                      matBadge="{{item}}" matBadgePosition="before" matBadgeColor="accent">-->
+<!--                View Tasks-->
+<!--              </button>-->
+
+<!--            </td>-->
+<!--          </ng-container>-->
+
+          <tr mat-header-row *matHeaderRowDef="displayedColumns; sticky: true"></tr>
+          <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+        </table>
+        <mat-paginator [pageSizeOptions]="[5, 10, 15]" showFirstLastButtons></mat-paginator>
+
+      </div>
+    </td>
+  </tr>
+</table>

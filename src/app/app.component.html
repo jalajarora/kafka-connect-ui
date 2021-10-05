@@ -1,0 +1,30 @@
+
+<mat-sidenav-container class="sidenav-container">
+  <mat-sidenav
+    #drawer
+    class="sidenav"
+    fixedInViewport="true"
+    mode="over"
+  >
+    <mat-toolbar>Menu</mat-toolbar>
+    <mat-nav-list>
+      <a style="font-size: 15px;" mat-list-item [routerLink]="['/kafka-connectors']" (click)="drawer.toggle()">KAFKA CONNECTORS</a>
+      <a style="font-size: 15px;" mat-list-item [routerLink]="['/dashboard']" (click)="drawer.toggle()">DASHBOARD</a>
+      <a style="font-size: 15px;" mat-list-item [routerLink]="['/new-connectors']" (click)="drawer.toggle()">NEW CONNECTOR</a>
+    </mat-nav-list>
+  </mat-sidenav>
+    <mat-toolbar color="primary">
+      <button type="button" aria-label="Toggle sidenav" mat-icon-button (click)="drawer.toggle()">
+        <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
+      </button>
+      <span>KAFKA CONNECT</span>
+    </mat-toolbar>
+    <router-outlet></router-outlet>
+
+  <div class="footer" style="background-color: #3F51B5; height: 20px;" #footer>
+    © 2021 - Team Name -
+    <img src="assets/images/slack-logo.png" alt="Slack" width="10" height="10">
+    <a href="" target="_blank" style="color: #FAFAFA; padding-left: 5px;">Slack</a>
+  </div>
+
+</mat-sidenav-container>

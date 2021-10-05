@@ -1,0 +1,50 @@
+<div style="overflow: scroll;">
+  <span style="font-weight: bold; font-size: 17px;"> Connector :</span> <span style="font-family: 'Comic Sans MS'; background-color: lightsteelblue;"> {{finalConnectorName}} </span>
+  <br/>
+  <br/>
+
+  <mat-tab-group mat-align-tabs="start">
+    <mat-tab label="Properties">
+      <br/>
+      <br/>
+      <div id="alert_VotePg" style="border: thick double lightsteelblue; padding: 10px; overflow: scroll;">
+        <div *ngFor="let item of ConnectorConfig | keyvalue" data-directive ng-model="text">
+          <label style="color: #378697;"> {{ item.key }} = </label> <label style="color: #056A09;">{{ item.value }} </label>
+        </div>
+      </div>
+
+    </mat-tab>
+
+
+    <mat-tab label="Edit/JSON">
+      <form class="example-form">
+          <mat-form-field style="width: 1100px;">
+            <textarea style="resize: none;" rows="25" matInput #updatedConnectorConfig> {{ConnectorConfig |  json}} </textarea>
+
+          </mat-form-field>
+      </form>
+
+      <br/>
+      <mat-card-actions>
+        <button mat-button mat-dialog-close (click)="updateConfig(finalConnectorName,updatedConnectorConfig)">SAVE</button>
+        <button mat-button mat-dialog-close>CANCEL</button>
+      </mat-card-actions>
+
+    </mat-tab>
+
+    <mat-tab label="CURL">
+      <div align="right">
+        <button color="primary" [cdkCopyToClipboard]="curl" mat-icon-button aria-label="clipboard" matTooltip="Copy to Clipboard">
+        <mat-icon>copy_all</mat-icon>
+        </button>
+      </div>
+      <div id="curl" style="border: thick double lightsteelblue; overflow: scroll;">
+        <div data-directive ng-model="text">
+          <mat-form-field style="width: 1100px;">
+            <textarea style="resize: none;" readonly rows="25" matInput #updatedConnectorConfig> {{curl}} </textarea>
+          </mat-form-field>
+        </div>
+      </div>
+    </mat-tab>
+  </mat-tab-group>
+</div>

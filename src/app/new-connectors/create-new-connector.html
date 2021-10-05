@@ -1,0 +1,63 @@
+<div style="overflow: scroll;">
+<div style="font-size: 20px; background-color: lightsteelblue; padding: 10px 0 10px 20px;">Create New Connector</div>
+<div style="padding: 10px 0 10px 20px;"> {{ data.NewConnectorName }}  ->  kafka </div>
+<!--  <div id="testing_config">Hello i am testing = my content</div>-->
+
+  <mat-tab-group mat-align-tabs="start" (selectedTabChange)="tabChanged($event)">
+    <mat-tab label="Properties">
+        <table style="width: 100%;">
+          <tr>
+            <td>
+              <p style="color: red;">NOTE: Please remove extra lines from the config if-any</p>
+            </td>
+            <td>
+              <div align="right">
+              <button [disabled]="true" color="primary" mat-icon-button aria-label="clipboard" matTooltip="Clean default config">
+                <mat-icon>cleaning_services</mat-icon>
+              </button>
+              </div>
+            </td>
+          </tr>
+        </table>
+      <div id="alert_VotePg" style="border: thick double lightsteelblue; padding: 10px; height:300px; overflow: scroll;">
+        <div name="properties" style="white-space: pre-wrap;color: #378697;" contenteditable="true">
+          {{newProperties}}
+        </div>
+      </div>
+    </mat-tab>
+
+
+    <mat-tab label="JSON">
+      <form class="example-form">
+        <mat-form-field style="width: 1100px;">
+          <textarea id="json_config" style="resize: none; height:300px;" rows="25" matInput #input> {{data.ConnectorConfig |  json}} </textarea>
+        </mat-form-field>
+      </form>
+    </mat-tab>
+
+    <mat-tab label="CURL">
+      <div align="right">
+        <button color="primary" [cdkCopyToClipboard]="data.CurlCommand" mat-icon-button aria-label="clipboard" matTooltip="Copy to Clipboard">
+          <mat-icon>copy_all</mat-icon>
+        </button>
+      </div>
+      <div id="curl" style="border: thick double lightsteelblue; overflow: scroll;">
+        <div data-directive ng-model="text">
+          <mat-form-field style="width: 1100px;">
+            <textarea style="resize: none;  height:300px;" readonly rows="25" matInput> {{data.CurlCommand}} </textarea>
+          </mat-form-field>
+        </div>
+      </div>
+    </mat-tab>
+  </mat-tab-group>
+
+  <div matTooltip="{{error.definition}}" matTooltipPosition="below" style="color: #ff0000;" *ngFor="let error of validationErrorsAndDefinition">
+    {{error.error}}
+  </div>
+
+  <mat-card-actions>
+    <button [disabled]="saveConfigButton" *ngIf= 'tabIndex == 0 || tabIndex == 1' mat-button (click)="postNewConnector()">SAVE</button>
+    <button *ngIf= 'tabIndex == 0 || tabIndex == 1' mat-button (click)="validateConfig()">VALIDATE</button>
+    <button mat-button mat-dialog-close>CLOSE</button>
+  </mat-card-actions>
+</div>

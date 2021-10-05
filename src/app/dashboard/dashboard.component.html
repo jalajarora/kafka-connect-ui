@@ -1,0 +1,95 @@
+<table style="table-layout:fixed;">
+  <tr>
+    <td colspan="3" align="center" style="font-size: 30px; font-weight: bold; padding-bottom: 20px; padding-top: 10px;">
+      <span>Dashboard</span>
+    </td>
+  </tr>
+  <tr>
+    <td style="width: 30%;">
+      <table style="padding-top: 10px;">
+        <tr>
+          <td>
+            <mat-card class="connStatusDashboard">Paused Connectors - {{pausedConnectorCount}}
+              <mat-spinner *ngIf= 'spinner == false' mode="indeterminate" style="margin:0 auto;" [diameter]="30"></mat-spinner>
+              <mat-list role="list" class="pausedList">
+                <mat-list-item style="padding-bottom: 10px;" role="listitem" *ngFor="let conn of pausedConnector">
+                  <mat-icon style="color: #3F51B5; padding-right: 5px;">cable</mat-icon> {{conn}}
+                </mat-list-item>
+              </mat-list>
+            </mat-card>
+          </td>
+          <td>
+            <mat-card class="connStatusDashboard">Paused Tasks - {{pausedTasksCount}}
+              <mat-spinner *ngIf= 'spinner == false' mode="indeterminate" style="margin:0 auto;" [diameter]="30"></mat-spinner>
+              <mat-list role="list" class="pausedList">
+                <mat-list-item style="padding-bottom: 20px;" role="listitem" *ngFor="let conn of pausedTasks">
+                  <mat-icon style="color: #3F51B5; padding-right: 5px;">task</mat-icon> {{conn.name}}
+                </mat-list-item>
+              </mat-list>
+            </mat-card>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <mat-card class="connStatusDashboard">Failed Connectors - {{failedConnectorCount}}
+              <mat-spinner *ngIf= 'spinner == false' mode="indeterminate" style="margin:0 auto;" [diameter]="30"></mat-spinner>
+              <mat-list role="list" class="pausedList">
+                <mat-list-item style="padding-bottom: 10px;" role="listitem" *ngFor="let conn of failedConnector">
+                  <mat-icon style="color: #3F51B5; padding-right: 5px;">cable</mat-icon> {{conn}}
+                </mat-list-item>
+              </mat-list>
+            </mat-card>
+          </td>
+          <td>
+            <mat-card class="connStatusDashboard">Failed Tasks - {{failedTasksCount}}
+              <mat-spinner *ngIf= 'spinner == false' mode="indeterminate" style="margin:0 auto;" [diameter]="30"></mat-spinner>
+              <mat-list role="list" class="pausedList">
+                <mat-list-item style="padding-bottom: 20px;" role="listitem" *ngFor="let conn of failedTasks">
+                  <mat-icon style="color: #3F51B5; padding-right: 5px;">task</mat-icon> {{conn.name}}
+                </mat-list-item>
+              </mat-list>
+            </mat-card>
+          </td>
+        </tr>
+      </table>
+    </td>
+    <td style="width: 30%; padding: unset; margin: unset;">
+      <table style="width:50%;">
+        <tr>
+          <td class="widget" style="width: 33%;">
+            <mat-card align="center" style="width: 150px; height: 125px; font-weight: bold; font-size: 40px; color: #E3E5E6; background-color: #FE4166;">
+              <span style="font-size: 20px;">SINK CONNECTORS</span><br/><br/>
+              <span>WIP</span>
+            </mat-card>
+          </td>
+<!--        </tr>-->
+<!--        <tr>-->
+          <td class="widget" style="width: 33%;">
+              <mat-card align="center" style="width: 150px; height: 125px; font-weight: bold; font-size: 40px; color: #E3E5E6; background-color: #FE4166;">
+                <span style="font-size: 20px;">SOURCE CONNECTORS</span><br/><br/>
+                <span>{{ connCount }}</span>
+              </mat-card>
+          </td>
+        </tr>
+        <tr>
+          <td class="widget" style="width: 33%;">
+              <mat-card align="center" style="width: 150px; height: 125px; font-weight: bold; font-size: 40px; color: #E3E5E6; background-color: #FE4166;">
+                <span style="font-size: 20px;">TOPICS USED BY CONNECTORS</span><br/><br/>
+                <span>WIP</span>
+              </mat-card>
+          </td>
+          <td class="widget" style="width: 33%;">
+            <mat-card align="center" style="width: 150px; height: 125px; font-weight: bold; font-size: 40px; color: #E3E5E6; background-color: #FE4166;">
+              <span style="font-size: 20px;">WIP</span><br/><br/>
+              <span>WIP</span>
+            </mat-card>
+          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+
+
+
+

@@ -1,0 +1,37 @@
+.widget {
+  text-align: center;
+  /*padding-top: 15%;*/
+  padding-left: 15%;
+}
+
+.heading {
+  font-size:30px;
+  font-weight: bold;
+}
+
+.pausedList {
+  height: 200px;
+  overflow: auto;
+  max-width: 500px;
+  min-width: 500px;
+}
+
+.connStatusDashboard {
+  color: #FE4166;
+}
+
+.pausedList::-webkit-scrollbar {
+  width: 0.7em;
+  background: white;
+}
+.pausedList::-webkit-scrollbar-thumb {
+  background: #C0C0C0;
+  height:20px;
+  border-radius: 20px;
+}
+
+.pausedList::-webkit-scrollbar-track-piece
+{
+  display:none;
+}
+

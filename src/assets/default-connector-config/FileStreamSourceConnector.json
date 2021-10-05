@@ -1,0 +1,18 @@
+{
+  "name": "FileStreamSourceConnector",
+  "connector.class": "org.apache.kafka.connect.file.FileStreamSourceConnector",
+  "tasks.max": 1,
+  "topic": "",
+  "key.converter": "",
+  "value.converter": "",
+  "header.converter": "",
+  "transforms": "",
+  "config.action.reload": "restart",
+  "errors.retry.timeout": "0",
+  "errors.retry.delay.max.ms": "60000",
+  "errors.tolerance": "none",
+  "errors.log.enable": "false",
+  "errors.log.include.messages": "false",
+  "file": "",
+  "batch.size": "2000"
+}

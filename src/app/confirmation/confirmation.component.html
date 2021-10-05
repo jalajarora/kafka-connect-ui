@@ -1,0 +1,12 @@
+<flux-card>
+  <form class="example-form">
+    <mat-label style="font-family: 'Helvetica Neue'; font-weight: bold;">{{data.confirmationMessage}}</mat-label>
+    <br/><br/>
+    <mat-label *ngIf= 'data.TaskID == null' style="font-family: 'Helvetica Neue';"><span style="font-weight: bold;"> Connector: </span> {{ data.connectorName }}</mat-label>
+    <br/><br/>
+  </form>
+  <mat-card-actions>
+    <button mat-button [mat-dialog-close]="data.connectorName">YES</button>
+    <button mat-button [mat-dialog-close]="'CANCEL'">NO</button>
+  </mat-card-actions>
+</flux-card>

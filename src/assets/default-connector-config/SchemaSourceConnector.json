@@ -1,0 +1,15 @@
+{
+  "name": "SchemaSourceConnector",
+  "connector.class": "io.confluent.connect.storage.tools.SchemaSourceConnector",
+  "tasks.max": 1,
+  "key.converter": "",
+  "value.converter": "",
+  "header.converter": "",
+  "transforms": "",
+  "config.action.reload": "restart",
+  "errors.retry.timeout": "0",
+  "errors.retry.delay.max.ms": "60000",
+  "errors.tolerance": "none",
+  "errors.log.enable": "false",
+  "errors.log.include.messages": "false"
+}

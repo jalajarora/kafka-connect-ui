@@ -1,0 +1,30 @@
+.sources-card {
+}
+
+.sink-card {
+}
+
+.new-connector {
+  width: 100%;
+  /*table-layout: fixed;*/
+}
+
+.connector-buttons {
+  width: 100%;
+  height: 500px;
+  table-layout: fixed;
+  padding: 20px 0 0 20px;
+}
+
+.button-class {
+  padding-bottom: 30px;
+}
+[contenteditable] {
+  outline: 0px solid transparent;
+}
+
+/*[role="textbox"]:empty::before {*/
+/*  content: "…Anything…";*/
+/*  display: inline;*/
+/*  color: darkRed;*/
+/*}*/

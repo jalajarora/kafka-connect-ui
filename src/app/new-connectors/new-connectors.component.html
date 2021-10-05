@@ -1,0 +1,132 @@
+<table class="new-connector">
+  <tr>
+    <td colspan="2" align="center" style="font-size: 30px; font-weight: bold; padding-bottom: 20px; padding-top: 10px;">
+      <span>New Connectors</span>
+    </td>
+  </tr>
+
+  <tr>
+<!--    sources-->
+    <td style="width: 70%;">
+      <mat-card class="sources-card">
+        <mat-card-title>Sources</mat-card-title>
+
+        <table class="connector-buttons">
+          <tr class="button-class">
+            <td>
+              <button mat-raised-button (click)="createConnector('FtpSourceConnector')">
+                <mat-icon matSuffix class="material-icons-outlined">folder</mat-icon>
+                <span style="color: #3F51B5;padding-left: 10px;">FtpSourceConnector</span>
+              </button>
+            </td>
+
+            <td>
+              <button mat-raised-button (click)="createConnector('RssSourceConnector')">
+                <mat-icon matSuffix class="material-icons-outlined">rss_feed</mat-icon>
+                <span style="color: #3F51B5;padding-left: 10px;">RssSourceConnector</span>
+              </button>
+            </td>
+
+            <td>
+              <button mat-raised-button (click)="createConnector('HTTPSourceConnector')">
+                <mat-icon matSuffix class="material-icons-outlined">http</mat-icon>
+                <span style="color: #3F51B5;padding-left: 10px;">HTTPSourceConnector</span>
+              </button>
+            </td>
+          </tr>
+
+          <tr>
+            <td>
+              <button mat-raised-button (click)="createConnector('LoadGenSourceConnector')">
+                <mat-icon matSuffix class="material-icons-outlined">cable</mat-icon>
+                <span style="color: #3F51B5;padding-left: 10px;">LoadGenSourceConnector</span>
+              </button>
+            </td>
+            <td>
+              <button mat-raised-button (click)="createConnector('ActiveMQSourceConnector')">
+                <mat-icon matSuffix class="material-icons-outlined">cable</mat-icon>
+                <span style="color: #3F51B5;padding-left: 10px;">ActiveMQSourceConnector</span>
+              </button>
+            </td>
+            <td>
+              <button mat-raised-button (click)="createConnector('IbmMQSourceConnector')">
+                <mat-icon matSuffix class="material-icons-outlined">cable</mat-icon>
+                <span style="color: #3F51B5;padding-left: 10px;">IbmMQSourceConnector</span>
+              </button>
+            </td>
+          </tr>
+
+          <tr>
+            <td>
+              <button mat-raised-button (click)="createConnector('JmsSourceConnector')">
+                <mat-icon matSuffix class="material-icons-outlined">cable</mat-icon>
+                <span style="color: #3F51B5;padding-left: 10px;">JmsSourceConnector</span>
+              </button>
+            </td>
+            <td>
+              <button mat-raised-button (click)="createConnector('MirrorCheckpointConnector')">
+                <mat-icon matSuffix class="material-icons-outlined">cable</mat-icon>
+                <span style="color: #3F51B5;padding-left: 10px;">MirrorCheckpointConnector</span>
+              </button>
+            </td>
+            <td>
+              <button mat-raised-button (click)="createConnector('MirrorHeartbeatConnector')">
+                <mat-icon matSuffix class="material-icons-outlined">favorite</mat-icon>
+                <span style="color: #3F51B5;padding-left: 10px;">MirrorHeartbeatConnector</span>
+              </button>
+            </td>
+          </tr>
+
+          <tr>
+            <td>
+              <button mat-raised-button (click)="createConnector('Jdbc')">
+                <mat-icon matSuffix class="material-icons-outlined">storage</mat-icon>
+                <span style="color: #3F51B5;padding-left: 10px;">Jdbc</span>
+              </button>
+            </td>
+            <td>
+              <button mat-raised-button (click)="createConnector('File')">
+                <mat-icon matSuffix class="material-icons-outlined">description</mat-icon>
+                <span style="color: #3F51B5;padding-left: 10px;">File</span>
+              </button>
+            </td>
+            <td>
+              <button mat-raised-button (click)="createConnector('Schemas')">
+                <mat-icon matSuffix class="material-icons-outlined">schema</mat-icon>
+                <span style="color: #3F51B5;padding-left: 10px;">Schemas</span>
+              </button>
+            </td>
+          </tr>
+
+          <tr>
+            <td>
+              <button mat-raised-button (click)="createConnector('MirrorSourceConnector')">
+                <mat-icon matSuffix class="material-icons-outlined">cable</mat-icon>
+                <span style="color: #3F51B5;padding-left: 10px;">MirrorSourceConnector</span>
+              </button>
+            </td>
+          </tr>
+
+        </table>
+      </mat-card>
+    </td>
+
+<!--    sinks-->
+    <td style="width: 30%;">
+      <mat-card class="sink-card">
+        <mat-card-title>Sinks</mat-card-title>
+
+<!--        TODO: Remove style="text-align: center;" and <span> when WIP is over -->
+        <table class="connector-buttons" style="text-align: center;">
+          <tr class="button-class">
+<!--            <td>-->
+<!--              <button mat-raised-button (click)="createConnector()">WIP</button>-->
+<!--            </td>-->
+            <span style="font-size: 30px;">WIP</span>
+          </tr>
+        </table>
+      </mat-card>
+    </td>
+  </tr>
+
+</table>
