@@ -1,4 +1,7 @@
 # Kafka-Connect-UI
+This is the Kafka UI to manage the Kafka cluster
+
+![kafka-connect-ui](./src/assets/images/kafka-connect-ui.png)
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.0.3.
 
