@@ -1,6 +1,6 @@
 {
   "name": "LoadGenSourceConnector",
-  "connector.class": "com.meltwater.kafka.connect.loadgen.LoadGenSourceConnector",
+  "connector.class": "com.domain.kafka.connect.loadgen.LoadGenSourceConnector",
   "tasks.max": 1,
   "message": "",
   "mapping.providerId": "",

@@ -1,6 +1,6 @@
 {
   "name": "HTTPSourceConnector",
-  "connector.class": "com.meltwater.kafka.connect.http.HTTPSourceConnector",
+  "connector.class": "com.domain.kafka.connect.http.HTTPSourceConnector",
   "tasks.max": 1,
   "kafka.topic": "",
   "mapping.providerId": "",
@@ -15,8 +15,8 @@
   "errors.log.enable": "false",
   "errors.log.include.messages": "false",
   "http.timer.interval.millis": "60000",
-  "http.client": "com.meltwater.kafka.connect.http.client.OkHttpClient",
-  "http.request.factory": "com.meltwater.kafka.connect.http.template.TemplateHttpRequestFactory",
-  "http.response.parser": "com.meltwater.kafka.connect.http.response.JsonHttpResponseParser",
+  "http.client": "com.domain.kafka.connect.http.client.OkHttpClient",
+  "http.request.factory": "com.domain.kafka.connect.http.template.TemplateHttpRequestFactory",
+  "http.response.parser": "com.domain.kafka.connect.http.response.JsonHttpResponseParser",
   "http.offset.initial": ""
 }

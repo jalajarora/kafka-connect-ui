@@ -1,6 +1,6 @@
 {
   "name": "FtpSourceConnector",
-  "connector.class": "com.meltwater.kafka.connect.ftp.FtpSourceConnector",
+  "connector.class": "com.domain.kafka.connect.ftp.FtpSourceConnector",
   "tasks.max": 1,
   "ftp.host": "",
   "ftp.user": "",
