@@ -13,9 +13,9 @@ RUN echo "//registry.npmjs.org/:_authToken=$NPM_TOKEN" > .npmrc
 RUN npm ci
 RUN rm -f .npmrc
 
-COPY . .
-#COPY ./src /app/src/
-#COPY *.* /app/
+#COPY . .
+COPY ./src /app/src/
+COPY *.* /app/
 RUN npm install && npm run build ${ENVIRONMENT}
 #RUN npm run build:${ENVIRONMENT}
 
