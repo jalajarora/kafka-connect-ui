@@ -21,6 +21,9 @@ describe('NewConnectorsService', () => {
     httpTestingController = TestBed.get(HttpTestingController);
   });
 
+  afterEach(() => {
+  });
+
   it('should be created', () => {
     expect(service).toBeTruthy();
   });
