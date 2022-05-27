@@ -3,17 +3,17 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false,
-  KAFKA_CONNECT_DOMAIN : '',
-  CONNECTORS_ENDPOINT : '/connectors',
-  STATUS_ENDPOINT : '/status',
-  RESUME_CONNECTOR_ENDPOINT : '/resume',
-  RESTART_CONNECTOR_ENDPOINT : '/restart',
-  PAUSE_CONNECTOR_ENDPOINT : '/pause',
-  TASK_ENDPOINT : '/tasks',
-  CONFIG_ENDPOINT : '/config',
-  CONNECTOR_PLUGIN: '/connector-plugins/',
-  VALIDATE_ENDPOINT: '/config/validate'
+  production: window["env"].production,
+  KAFKA_CONNECT_DOMAIN : window["env"].KAFKA_CONNECT_DOMAIN,
+  CONNECTORS_ENDPOINT : window["env"].CONNECTORS_ENDPOINT,
+  STATUS_ENDPOINT : window["env"].STATUS_ENDPOINT,
+  RESUME_CONNECTOR_ENDPOINT : window["env"].RESUME_CONNECTOR_ENDPOINT,
+  RESTART_CONNECTOR_ENDPOINT : window["env"].RESTART_CONNECTOR_ENDPOINT,
+  PAUSE_CONNECTOR_ENDPOINT : window["env"].PAUSE_CONNECTOR_ENDPOINT,
+  TASK_ENDPOINT : window["env"].TASK_ENDPOINT,
+  CONFIG_ENDPOINT : window["env"].CONFIG_ENDPOINT,
+  CONNECTOR_PLUGIN: window["env"].CONNECTOR_PLUGIN,
+  VALIDATE_ENDPOINT: window["env"].VALIDATE_ENDPOINT
 };
 
 /*

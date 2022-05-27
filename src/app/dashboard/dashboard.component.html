@@ -12,7 +12,7 @@
             <mat-card class="connStatusDashboard">Paused Connectors - {{pausedConnectorCount}}
               <mat-spinner *ngIf= 'spinner == false' mode="indeterminate" style="margin:0 auto;" [diameter]="30"></mat-spinner>
               <mat-list role="list" class="pausedList">
-                <mat-list-item style="padding-bottom: 10px;" role="listitem" *ngFor="let conn of pausedConnector">
+                <mat-list-item style="padding-bottom: 30px; padding-top: 20px;" role="listitem" *ngFor="let conn of pausedConnector">
                   <mat-icon style="color: #3F51B5; padding-right: 5px;">cable</mat-icon> {{conn}}
                 </mat-list-item>
               </mat-list>
@@ -22,7 +22,7 @@
             <mat-card class="connStatusDashboard">Paused Tasks - {{pausedTasksCount}}
               <mat-spinner *ngIf= 'spinner == false' mode="indeterminate" style="margin:0 auto;" [diameter]="30"></mat-spinner>
               <mat-list role="list" class="pausedList">
-                <mat-list-item style="padding-bottom: 20px;" role="listitem" *ngFor="let conn of pausedTasks">
+                <mat-list-item style="padding-bottom: 30px; padding-top: 20px;" role="listitem" *ngFor="let conn of pausedTasks">
                   <mat-icon style="color: #3F51B5; padding-right: 5px;">task</mat-icon> {{conn.name}}
                 </mat-list-item>
               </mat-list>
@@ -34,7 +34,7 @@
             <mat-card class="connStatusDashboard">Failed Connectors - {{failedConnectorCount}}
               <mat-spinner *ngIf= 'spinner == false' mode="indeterminate" style="margin:0 auto;" [diameter]="30"></mat-spinner>
               <mat-list role="list" class="pausedList">
-                <mat-list-item style="padding-bottom: 10px;" role="listitem" *ngFor="let conn of failedConnector">
+                <mat-list-item style="padding-bottom: 30px; padding-top: 20px;" role="listitem" *ngFor="let conn of failedConnector">
                   <mat-icon style="color: #3F51B5; padding-right: 5px;">cable</mat-icon> {{conn}}
                 </mat-list-item>
               </mat-list>
@@ -44,7 +44,29 @@
             <mat-card class="connStatusDashboard">Failed Tasks - {{failedTasksCount}}
               <mat-spinner *ngIf= 'spinner == false' mode="indeterminate" style="margin:0 auto;" [diameter]="30"></mat-spinner>
               <mat-list role="list" class="pausedList">
-                <mat-list-item style="padding-bottom: 20px;" role="listitem" *ngFor="let conn of failedTasks">
+                <mat-list-item style="padding-bottom: 30px; padding-top: 20px;" role="listitem" *ngFor="let conn of failedTasks">
+                  <mat-icon style="color: #3F51B5; padding-right: 5px;">task</mat-icon> {{conn.name}}
+                </mat-list-item>
+              </mat-list>
+            </mat-card>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <mat-card class="connStatusDashboard">Unassigned Connectors - {{unassignedConnectorCount}}
+              <mat-spinner *ngIf= 'spinner == false' mode="indeterminate" style="margin:0 auto;" [diameter]="30"></mat-spinner>
+              <mat-list role="list" class="pausedList">
+                <mat-list-item style="padding-bottom: 30px; padding-top: 20px;" role="listitem" *ngFor="let conn of unassignedConnector">
+                  <mat-icon style="color: #3F51B5; padding-right: 5px;">cable</mat-icon> {{conn}}
+                </mat-list-item>
+              </mat-list>
+            </mat-card>
+          </td>
+          <td>
+            <mat-card class="connStatusDashboard">Unassigned Tasks - {{unassignedTasksCount}}
+              <mat-spinner *ngIf= 'spinner == false' mode="indeterminate" style="margin:0 auto;" [diameter]="30"></mat-spinner>
+              <mat-list role="list" class="pausedList">
+                <mat-list-item style="padding-bottom: 30px; padding-top: 20px;" role="listitem" *ngFor="let conn of unassignedTask">
                   <mat-icon style="color: #3F51B5; padding-right: 5px;">task</mat-icon> {{conn.name}}
                 </mat-list-item>
               </mat-list>
@@ -53,7 +75,7 @@
         </tr>
       </table>
     </td>
-    <td style="width: 30%; padding: unset; margin: unset;">
+    <td style="width: 35%; padding:unset; margin:unset;">
       <table style="width:50%;">
         <tr>
           <td class="widget" style="width: 33%;">

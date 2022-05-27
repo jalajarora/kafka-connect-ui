@@ -25,6 +25,30 @@ Run `ng build` to build the project. The build artifacts will be stored in the `
 
 Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
 
+# How to use the docker image
+#### how to pull the image locally
+```
+docker pull jalajarora/kafka-connect-ui:v1
+```
+
+#### how to run the image locally
+```
+docker run \
+-e production=true \
+-e KAFKA_CONNECT_DOMAIN="{YOUR DOMAIN NAME}" \
+-e CONNECTORS_ENDPOINT="/connectors" \
+-e STATUS_ENDPOINT="/status" \
+-e RESUME_CONNECTOR_ENDPOINT="/resume" \
+-e RESTART_CONNECTOR_ENDPOINT="/restart" \
+-e PAUSE_CONNECTOR_ENDPOINT="/pause" \
+-e TASK_ENDPOINT="/tasks" \
+-e CONFIG_ENDPOINT="/config" \
+-e CONNECTOR_PLUGIN="/connector-plugins/" \
+-e VALIDATE_ENDPOINT="/config/validate" \
+-p 4299:80 {IMAGE_NAME}
+```
+Then go to: [http://localhost:4299/](http://localhost:4299/)
+
 ## Running end-to-end tests
 
 Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).

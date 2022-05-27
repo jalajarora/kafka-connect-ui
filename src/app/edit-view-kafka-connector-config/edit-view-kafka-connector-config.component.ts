@@ -49,9 +49,8 @@ export class EditViewKafkaConnectorConfigComponent implements OnInit {
   }
 
   createCurlCommand(connectConfig: any){
-    let curlCommand = `curl -X PUT \\` + "\n" + environment.KAFKA_CONNECT_DOMAIN +
-      environment.CONNECTORS_ENDPOINT + "/" +
-      this.finalConnectorName + environment.CONFIG_ENDPOINT + " \\" + "\n" + "-H 'Content-Type: application/json' \\" + "\n" + "-H 'Accept: application/json' \\"
+    let configEndpoint = environment.KAFKA_CONNECT_DOMAIN + environment.CONNECTORS_ENDPOINT + "/" + this.finalConnectorName + environment.CONFIG_ENDPOINT
+    let curlCommand = `curl -X PUT \\` + "\n'" + configEndpoint + "' \\" + "\n" + "-H 'Content-Type: application/json' \\" + "\n" + "-H 'Accept: application/json' \\"
     curlCommand = curlCommand + "\n" + "-d '" + "\n" +  JSON.stringify(connectConfig) + "'" + "\n";
     this.curl=curlCommand;
   }

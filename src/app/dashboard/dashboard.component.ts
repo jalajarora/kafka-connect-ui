@@ -13,10 +13,14 @@ export class DashboardComponent implements OnInit, AfterViewInit {
   public failedConnector = [];
   public failedTasks = [];
   public pausedTasks = [];
+  public unassignedConnector = [];
+  public unassignedTask = [];
   public pausedConnectorCount: number = 0;
   public failedConnectorCount: number = 0;
   public pausedTasksCount: number = 0;
   public failedTasksCount: number = 0;
+  public unassignedConnectorCount: number = 0;
+  public unassignedTasksCount: number = 0;
   public spinner = false;
 
   constructor(
@@ -36,6 +40,8 @@ export class DashboardComponent implements OnInit, AfterViewInit {
     let connectors = [];
     this.failedConnector = [];
     this.pausedConnector = [];
+    this.unassignedConnector = [];
+    this.unassignedTask = [];
     this.kafka.listKafkaConnector().subscribe((resp: any[]) => {
       this.connCount = resp.length;
       for (let connector of resp) {
@@ -51,6 +57,11 @@ export class DashboardComponent implements OnInit, AfterViewInit {
                 this.failedConnectorCount = this.failedConnector.length;
           }
 
+          if(connectorDetails.connector.state === "UNASSIGNED") {
+            this.unassignedConnector.push(connectorDetails.name);
+            this.unassignedConnectorCount = this.unassignedConnector.length;
+          }
+
           // tasks
           connectorDetails.tasks.forEach((element) =>{
             if(element.state === "PAUSED") {
@@ -60,6 +71,10 @@ export class DashboardComponent implements OnInit, AfterViewInit {
             if(element.state === "FAILED") {
               this.failedTasks.push({'id': element.id, 'name': connectorDetails.name});
               this.failedTasksCount = this.failedTasks.length;
+            }
+            if(element.state === "UNASSIGNED") {
+              this.unassignedTask.push({'id': element.id, 'name': connectorDetails.name});
+              this.unassignedTasksCount = this.unassignedTask.length;
             }
           })
           if(connectors.length == resp.length){
